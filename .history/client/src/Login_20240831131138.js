@@ -10,7 +10,7 @@ function Login({ setToken }) {
             const response = await axios.post('http://localhost:3000/login', { username, password });
             const token = response.data.token;
             setToken(token);
-            localStorage.setItem('73529e5e7d9eae9ba56a7ac8cf688187265fa2df14d685660d1e4cb346fbfe923719665051d9ecfc5e184a2be2acd3c4f1c61f661c333f9ae578d2ea726efeac', token); // Store the token in local storage
+            localStorage.setItem('token', token); // Store the token in local storage
             window.location.href = '/home';
         } catch (error) {
             alert('Invalid credentials');
