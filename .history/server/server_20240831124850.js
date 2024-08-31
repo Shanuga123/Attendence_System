@@ -13,7 +13,7 @@ app.post('/login', (req, res) => {
     const user = users.find(u => u.username === username && u.password === password);
 
     if (user) {
-        const token = jwt.sign({ username }, '73529e5e7d9eae9ba56a7ac8cf688187265fa2df14d685660d1e4cb346fbfe923719665051d9ecfc5e184a2be2acd3c4f1c61f661c333f9ae578d2ea726efeac');
+        const token = jwt.sign({ username }, 'secretkey');
         res.json({ token });
     } else {
         res.status(401).send('Invalid credentials');
